@@ -1,4 +1,18 @@
 <?php
+/**
+ * Shortlink Converter
+ *
+ *
+ * @wordpress-plugin
+ * Plugin Name: Shortlink Converter
+ * Description: Convert all content links into shortlinks
+ * Version:     0.1
+ * Author:      Shivanand Sharma
+ * Author URI:  https://www.converticacommerce.com/
+ * Text Domain: wpmr
+ * License:     MIT
+ * License URI: https://opensource.org/licenses/MIT
+ */
 
 function bt_replace() {
 	$post_id = get_the_id();
