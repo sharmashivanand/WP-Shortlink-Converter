@@ -21,7 +21,7 @@ function bt_replace() {
 		$siteurl = get_site_url(); // get the address of the current site
 		$siteurl = trailingslashit($siteurl);
 		$siteurl = preg_quote($siteurl); // 
-		$exp = "/href=["|']($siteurl[^"']+)/";
+		$exp = "/href=[\"|']($siteurl[^\"']+)/";
 		
 		$content = preg_replace_callback($exp, 'bt_replace_url', $content); // replacement magic. Match urls begining with our WP site.	
 
