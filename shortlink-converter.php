@@ -15,7 +15,7 @@
  */
 
 function bt_replace() {
-    if(!is_user_logged_in())  return;
+    //if(!is_user_logged_in())  return;
     if(!is_main_query())  return;
 	$post_id = get_the_id();
 	if ( 'page' == get_post_type($post_id) || 'post' == get_post_type($post_id)) { // If we are on a post or a page (we want to avoid attachments etc.)
@@ -38,7 +38,7 @@ function bt_replace() {
         //$content = str_replace('www.maryannjacobsen.com','maryannjacobsen.com', $content);
         //$content = str_replace('http://maryannjacobsen.com','https://maryannjacobsen.com', $content);
 
-		if(is_user_logged_in()) { 
+		if(1 || is_user_logged_in()) { 
 			wp_update_post( array('ID' => $post_id, 'post_content' => $content) ,$error); // update the post with the new content
             bt_log($error);
             //bt_log($content);
@@ -55,7 +55,7 @@ function bt_replace_url($matches) {
 	return $matches[0];
 }
 
-add_action('genesis_before_entry','bt_replace'); // any hook within the loop should do
+//add_action('genesis_before_entry','bt_replace'); // any hook within the loop should do
 
 function bt_log($str) {
 	echo '<pre>';
